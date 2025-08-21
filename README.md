@@ -1,2 +1,2 @@
 # parchment
-Bihter's blog
+My blog
