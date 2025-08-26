@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parchment Blog</title>
+
+  <!-- Link to global stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+  </header>
+
+  <!-- ===========================
+       Main Blog Content
+       =========================== -->
+  <main>
+    <h2>Recent Posts</h2>
+    <div id="post-list"></div>
+
+    <!-- Pagination controls -->
+    <div id="pagination">
+      <button id="prev-page" disabled>← Previous</button>
+      <span id="page-info">Page 1</span>
+      <button id="next-page">Next →</button>
+    </div>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+        <a href="https://bsky.app/profile/besener.bsky.social" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-bluesky"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Handles pagination and dynamic back links
+       =========================== -->
+  <script>
+    const POSTS_PER_PAGE = 5;
+    let posts = [];
+    let currentPage = 1;
+
+    // DOM elements
+    const postList = document.getElementById('post-list');
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const pageInfo = document.getElementById('page-info');
+
+    // ===========================
+    // 1. Determine current page from URL
+    // ===========================
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageFromURL = parseInt(urlParams.get('page'));
+    if (!isNaN(pageFromURL) && pageFromURL > 0) currentPage = pageFromURL;
+
+    // ===========================
+    // 2. Load posts.json and render
+    // ===========================
+    fetch("posts.json")
+      .then(res => res.json())
+      .then(data => {
+        // Sort newest first
+        posts = data.sort((a,b) => new Date(b.date + "T00:00:00") - new Date(a.date + "T00:00:00"));
+
+        // Render first/current page
+        renderPage();
+      })
+      .catch(err => postList.innerHTML = `<p>Error loading posts: ${err}</p>`);
+
+    // ===========================
+    // 3. Render a page of posts
+    // ===========================
+    function renderPage() {
+      postList.innerHTML = '';
+
+      // Calculate slice indices
+      const start = (currentPage - 1) * POSTS_PER_PAGE;
+      const end = start + POSTS_PER_PAGE;
+      const pagePosts = posts.slice(start, end);
+
+      pagePosts.forEach(post => {
+        // Timezone-safe date
+        const dateObj = new Date(post.date + "T00:00:00");
+        const formattedDate = dateObj.toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+
+        // Calculate the page the post is on dynamically
+        const postIndex = posts.findIndex(p => p.file === post.file);
+        const postPage = Math.floor(postIndex / POSTS_PER_PAGE) + 1;
+
+        const article = document.createElement('article');
+        article.innerHTML = `
+          <div class="post-featured">
+            <a href="posts/${post.file}?page=${postPage}">
+              <img src="${post.image}" alt="${post.title}">
+            </a>
+          </div>
+          <h3><a href="posts/${post.file}?page=${postPage}">${post.title}</a></h3>
+          <p><em>${formattedDate}</em></p>
+          <p>${post.excerpt} <a href="posts/${post.file}?page=${postPage}"><strong>Read more →</strong></a></p>
+        `;
+        postList.appendChild(article);
+      });
+
+      // Update pagination controls
+      const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+    // ===========================
+    // 4. Pagination button events
+    // ===========================
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage();
+        window.scrollTo(0, 0);
+        updateURL();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPage();
+        window.scrollTo(0, 0);
+        updateURL();
+      }
+    });
+
+    // ===========================
+    // 5. Update URL without reloading page
+    // ===========================
+    function updateURL() {
+      const newURL = `${window.location.pathname}?page=${currentPage}`;
+      window.history.replaceState({}, '', newURL);
+    }
+  </script>
+</body>
+</html>
