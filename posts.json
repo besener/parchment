@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Welcome to My Parchment",
+    "date": "2025-08-20",
+    "file": "welcome.html",
+    "excerpt": "This is my very first post on Parchment! Here I’ll share thoughts, travels, and experiments...",
+    "image": "posts/images/welcome.jpg"
+  },
+  {
+    "title": "Traveling",
+    "date": "2025-08-21",
+    "file": "travel.html",
+    "excerpt": "I just returned from my first trip since starting Parchment, and I have so much to share...",
+    "image": "posts/images/travel.jpg"
+  },
+  {
+    "title": "Summer",
+    "date": "2025-08-22",
+    "file": "summer.html",
+    "excerpt": "Sometimes the smallest details inspire the biggest ideas. Summer vibes...",
+    "image": "posts/images/summer.jpg"
+  },
+  {
+    "title": "New Post 4",
+    "date": "2025-08-23",
+    "file": "new-post-4.html",
+    "excerpt": "Short summary or excerpt of the new post...",
+    "image": "posts/images/new-post-4.jpg"
+  },
+  {
+    "title": "New Post 5",
+    "date": "2025-08-24",
+    "file": "new-post-5.html",
+    "excerpt": "Short summary or excerpt of the new post...",
+    "image": "posts/images/new-post-5.jpg"
+  },
+  {
+    "title": "New Post 6",
+    "date": "2025-08-25",
+    "file": "new-post-6.html",
+    "excerpt": "Short summary or excerpt of the new post...",
+    "image": "posts/images/new-post-6.jpg"
+  },
+  {
+    "title": "New Post 7",
+    "date": "2025-08-26",
+    "file": "new-post-7.html",
+    "excerpt": "Short summary or excerpt of the new post...",
+    "image": "posts/images/new-post-7.jpg"
+  },
+  {
+    "title": "New Post 8",
+    "date": "2025-08-27",
+    "file": "new-post-8.html",
+    "excerpt": "Short summary or excerpt of the new post...",
+    "image": "posts/images/new-post-8.jpg"
+  },
+  {
+    "title": "New Post 9",
+    "date": "2025-08-28",
+    "file": "new-post-9.html",
+    "excerpt": "Short summary or excerpt of the new post...",
+    "image": "posts/images/new-post-9.jpg"
+  }
+]
