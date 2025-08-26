@@ -40,26 +40,5 @@
     "file": "new-post-6.html",
     "excerpt": "Short summary or excerpt of the new post...",
     "image": "posts/images/new-post-6.jpg"
-  },
-  {
-    "title": "New Post 7",
-    "date": "2025-08-26",
-    "file": "new-post-7.html",
-    "excerpt": "Short summary or excerpt of the new post...",
-    "image": "posts/images/new-post-7.jpg"
-  },
-  {
-    "title": "New Post 8",
-    "date": "2025-08-27",
-    "file": "new-post-8.html",
-    "excerpt": "Short summary or excerpt of the new post...",
-    "image": "posts/images/new-post-8.jpg"
-  },
-  {
-    "title": "New Post 9",
-    "date": "2025-08-28",
-    "file": "new-post-9.html",
-    "excerpt": "Short summary or excerpt of the new post...",
-    "image": "posts/images/new-post-9.jpg"
   }
 ]
