@@ -5,5 +5,12 @@
     "file": "welcome.html",
     "excerpt": "This is my very first post on Parchment! Here I’ll share thoughts, travels, and...",
     "image": "posts/images/welcome.jpg"
+  },
+  {
+    "title": "Course Design Institute",
+    "date": "2025-08-26",
+    "file": "coursedesigninstitute.html",
+    "excerpt": "I attended the first day of this year’s Course Design Institute (CDI)...",
+    "image": "posts/images/coursedesigninstitute.jpg"
   }
 ]
