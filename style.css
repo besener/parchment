@@ -22,12 +22,12 @@ h1 {
 }
 
 /* ==============================
-   Hyperlink
+   Hyperlinks
    ============================== */
 a {
-  color: #333;                          /* Default link color */
   text-decoration: none;                /* Remove underline initially */
-  transition: color 0.25s ease, text-decoration 0.25s ease;
+  color: #333;                          /* Default link color */
+  transition: color 0.25s ease, text-decoration 0.25s ease; /* Smooth color change on hover */
 }
 
 a:hover {
