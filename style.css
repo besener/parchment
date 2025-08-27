@@ -22,6 +22,21 @@ h1 {
 }
 
 /* ==============================
+   Hyperlink Styles
+   ============================== */
+a {
+  color: #333;                          /* Default link color */
+  text-decoration: none;                /* Remove underline initially */
+  transition: color 0.25s ease, 
+              text-decoration 0.25s ease;
+}
+
+a:hover {
+  color: #5f6db3;                       /* Accent hover color */
+  text-decoration: underline;           /* Underline only on hover */
+}
+
+/* ==============================
    Navigation Links
    ============================== */
 nav a {
@@ -205,19 +220,4 @@ article p {
 .back-link:hover {
   color: #5f6db3;               /* Hover color matches other interactive links */
   text-decoration: underline;   /* Underline appears on hover */
-}
-
-/* ==============================
-   Hyperlink Styles
-   ============================== */
-a {
-  color: #333;                          /* Default link color */
-  text-decoration: none;                /* Remove underline initially */
-  transition: color 0.25s ease, 
-              text-decoration 0.25s ease;
-}
-
-a:hover {
-  color: #5f6db3;                       /* Accent hover color */
-  text-decoration: underline;           /* Underline only on hover */
 }
