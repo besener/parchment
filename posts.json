@@ -7,6 +7,13 @@
     "image": "posts/images/welcome.jpg"
   },
   {
+    "title": "Summer Baking",
+    "date": "2025-08-22",
+    "file": "summerbaking.html",
+    "excerpt": "This summer, I embarked on an adventure in my kitchen,...",
+    "image": "posts/images/summerbaking.jpg"
+  },
+  {
     "title": "Course Design Institute",
     "date": "2025-08-26",
     "file": "cdi.html",
