@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Teaching Manifesto - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body data-page="{{PAGE}}">
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <nav>
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/kmg.jpg" alt="A Teaching Manifesto">
+    </div>
+
+    <!-- Article content -->
+    <article>
+      <h2>{{TITLE}}</h2>
+      <p id="post-date"><em>August 24, 2025</em></p>
+
+  <h4></h4>
+  <p>I read a couple of books on pedagogy this summer. One of them was “<a href="https://wvupressonline.com/node/823" target="_blank"><strong>Radical Hope: A Teaching Manifesto</strong></a>,” a book by Kevin. M. Gannon, published in 2020 by West Virginia University Press.</p>
+      
+  <h4></h4>
+  <p>Gannon paints a bold and inspiring picture of what higher education could become. He champions an inclusive teaching philosophy that tackles the real-world challenges students and faculty face, from financial strain and mental health struggles to barriers in accessibility and persistent inequalities. He shines a spotlight on Universal Design for Learning (UDL), urging educators to reinvent their courses with a rich variety of materials and assessments, and to nurture 'brave spaces' where honest, transformative conversations can flourish. In Gannon’s view, higher education is a vibrant landscape for sowing the seeds of 'radical hope,' where teaching and learning spark agency, equity, and a deeper sense of our shared humanity. For him, radical hope means daring to reach for a brighter tomorrow, even when its outline is still coming into focus. Teaching, in Gannon’s eyes, is itself a radical act of hope, a living testament to the belief in a better world and a guide for students to break through boundaries.</p>
+      
+  <h4></h4>
+  <p>Gannon’s book resonated with me on a deep level, its clarity and sincerity echoing my own hopes and ideals. Discovering my beliefs reflected in his words filled me with a renewed sense of “radical hope”. Like many educators in higher education, I am continually seeking innovative ways to uplift and empower my students. We strive to create lifelong learning journeys, inviting students to become true partners in the pursuit of knowledge. By championing inclusivity, we open doors to greater accessibility, comfort, and a sense of belonging, transforming theory into meaningful, lived experience.</p>
+  
+  <h4></h4>
+  <p>I wholeheartedly recommend Gannon’s book to every teacher and graduate student eager to delve further into pedagogy and contemporary higher education.</p>
+    </article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+        <a href="https://bsky.app/profile/besener.bsky.social" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-bluesky"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Dynamic back links + safe date display
+       =========================== -->
+  <script>
+    // ===========================
+    // 1. Get page number from URL or body dataset
+    // ===========================
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page') || document.body.dataset.page || 1;
+
+    // ===========================
+    // 2. Update all back links dynamically
+    // ===========================
+    const backLinks = document.querySelectorAll('#back-link, #back-link-bottom');
+    backLinks.forEach(link => {
+      link.href = `../index.html?page=${page}`;
+      link.textContent = `← Back to Page ${page}`;
+    });
+
+    // ===========================
+    // 3. Timezone-safe date display
+    // ===========================
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
