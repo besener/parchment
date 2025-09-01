@@ -67,6 +67,59 @@
       </span>
     </p>
     <p>© 2025 Parchment</p>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to My Parchment - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <nav>
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <div class="post-featured-post">
+      <img src="images/welcome.jpg" alt="Welcome to My Parchment">
+    </div>
+
+    <article>
+      <h2>Welcome to My Parchment</h2>
+      <p id="post-date"><em>August 20, 2025</em></p>
+      <p>This is my very first post on <strong>Parchment</strong>! I’ll share thoughts, travels, baking, and experiences from my life inside and outside academia.</p>
+    </article>
+
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer"><i class="fab fa-flickr"></i></a>
+        <a href="https://bsky.app/profile/besener.bsky.social" target="_blank" rel="noopener noreferrer"><i class="fab fa-bluesky"></i></a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
   </footer>
 
   <!-- ===========================
@@ -74,40 +127,41 @@
        Dynamic back links + safe date display
        =========================== -->
   <script>
-    (function () {
-      const POSTS_PER_PAGE = 5; // must match index.html
-      const fileName = location.pathname.split("/").pop(); // e.g., "welcome.html"
+  (function() {
+    const POSTS_PER_PAGE = 5;
+    const fileName = location.pathname.split("/").pop();
+    const backLinks = document.querySelectorAll("#back-link, #back-link-bottom");
 
-      // ===========================
-      // 1. Compute page number dynamically from posts.json
-      // ===========================
+    // 1. Try reading ?page from URL first
+    const urlParams = new URLSearchParams(window.location.search);
+    let page = urlParams.get('page');
+
+    if (page) {
+      page = parseInt(page);
+      if (isNaN(page) || page < 1) page = 1;
+      updateBackLinks(page);
+    } else {
+      // 2. Fallback: compute page dynamically from posts.json
       fetch("../posts.json?v=" + Date.now(), { cache: "no-store" })
         .then(res => res.json())
         .then(posts => {
-          // Sort newest-first like index.html
-          posts.sort((a, b) => new Date(b.date + "T00:00:00") - new Date(a.date + "T00:00:00"));
-
-          // Find the index of this post
-          const idx = posts.findIndex(p => (p.file || "").split("/").pop() === fileName);
-
-          // Compute page (fallback to 1 if not found)
-          const page = idx >= 0 ? Math.floor(idx / POSTS_PER_PAGE) + 1 : 1;
-
-          // ===========================
-          // 2. Update back links dynamically
-          // ===========================
-          document.querySelectorAll("#back-link, #back-link-bottom").forEach(link => {
-            link.href = `../index.html?page=${page}`;
-            link.textContent = `← Back to Page ${page}`;
-          });
+          posts.sort((a,b) => new Date(b.date+"T00:00:00") - new Date(a.date+"T00:00:00"));
+          const idx = posts.findIndex(p => (p.file||"").split("/").pop() === fileName);
+          const computedPage = idx >= 0 ? Math.floor(idx / POSTS_PER_PAGE) + 1 : 1;
+          updateBackLinks(computedPage);
         })
         .catch(() => {
           // fallback if posts.json fails
-          document.querySelectorAll("#back-link, #back-link-bottom").forEach(link => {
-            link.href = "../index.html?page=1";
-            link.textContent = "← Back to Page 1";
-          });
+          updateBackLinks(1);
         });
+    }
+
+    function updateBackLinks(pageNumber) {
+      backLinks.forEach(link => {
+        link.href = `../index.html?page=${pageNumber}`;
+        link.textContent = `← Back to Page ${pageNumber}`;
+      });
+    }
 
       // ===========================
     // 3. Timezone-safe date display
