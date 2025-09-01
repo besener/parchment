@@ -1,0 +1,56 @@
+<!--
+layouts/_default/list.html
+This template generates a paginated list of posts.
+It integrates the JS redirect so bookmarked posts always load correctly.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts - Parchment</title>
+  <!-- Link your global stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Posts</h1>
+  </header>
+
+  <main>
+    <!-- --- Render paginated posts --- -->
+    {{ range .Paginator.Pages }}
+      <article class="post">
+        <!--
+          Each post link must have class="post-link"
+          for the JS redirect to work
+        -->
+        <h2>
+          <a class="post-link" href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <p>{{ .Summary }}</p>
+      </article>
+    {{ end }}
+
+    <!-- --- Pagination Controls --- -->
+    <nav class="pagination">
+      {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}">Previous</a>
+      {{ end }}
+      {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}">Next</a>
+      {{ end }}
+    </nav>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Parchment</p>
+  </footer>
+
+  <!-- --- Include the JS redirect --- -->
+  <script src="/assets/js/pagination-redirect.js"></script>
+
+</body>
+</html>
