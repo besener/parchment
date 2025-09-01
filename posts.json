@@ -7,20 +7,6 @@
     "image": "posts/images/welcome.jpg"
   },
   {
-    "title": "Post 2",
-    "date": "2025-08-21",
-    "file": "post2.html",
-    "excerpt": "This is my post 2...",
-    "image": "posts/images/post2.jpg"
-  },
-  {
-    "title": "Post 3",
-    "date": "2025-08-21",
-    "file": "post3.html",
-    "excerpt": "This is my post 3...",
-    "image": "posts/images/post3.jpg"
-  },
-  {
     "title": "Summer Baking",
     "date": "2025-08-22",
     "file": "summerbaking.html",
