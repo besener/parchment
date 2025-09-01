@@ -50,7 +50,7 @@ Footer links include:
 - [Bluesky](https://bsky.app/profile/besener.bsky.social) ![Bluesky](https://img.shields.io/badge/-Bluesky-00CFFF?style=flat&logo=bluesky&logoColor=white)  
 
 ### 4️⃣ Back Links
-JavaScript updates all “Back to Page” links dynamically to preserve pagination context.  
+JavaScript updates all “Back to Page” links dynamically to preserve pagination context. (update: I removed dynamic pagination because of bookmark issue.) 
 
 ### 5️⃣ Timezone-Safe Dates
 Post dates are parsed as `YYYY-MM-DDT00:00:00` to prevent timezone shifts.  
