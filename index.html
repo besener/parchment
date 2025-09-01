@@ -61,70 +61,54 @@
 
   <!-- ===========================
        JavaScript Section
-       Handles pagination and dynamic back links
+       Handles pagination internally
        =========================== -->
   <script>
     const POSTS_PER_PAGE = 5;
     let posts = [];
     let currentPage = 1;
 
-    // DOM elements
     const postList = document.getElementById('post-list');
     const prevBtn = document.getElementById('prev-page');
     const nextBtn = document.getElementById('next-page');
     const pageInfo = document.getElementById('page-info');
 
     // ===========================
-    // 1. Determine current page from URL
-    // ===========================
-    const urlParams = new URLSearchParams(window.location.search);
-    const pageFromURL = parseInt(urlParams.get('page'));
-    if (!isNaN(pageFromURL) && pageFromURL > 0) currentPage = pageFromURL;
-
-    // ===========================
-    // 2. Load posts.json and render
+    // 1. Load posts.json and render
     // ===========================
     fetch("posts.json")
       .then(res => res.json())
       .then(data => {
         // Sort newest first
         posts = data.sort((a,b) => new Date(b.date + "T00:00:00") - new Date(a.date + "T00:00:00"));
-
-        // Render first/current page
         renderPage();
       })
       .catch(err => postList.innerHTML = `<p>Error loading posts: ${err}</p>`);
 
     // ===========================
-    // 3. Render a page of posts
+    // 2. Render a page of posts
     // ===========================
     function renderPage() {
       postList.innerHTML = '';
 
-      // Calculate slice indices
       const start = (currentPage - 1) * POSTS_PER_PAGE;
       const end = start + POSTS_PER_PAGE;
       const pagePosts = posts.slice(start, end);
 
       pagePosts.forEach(post => {
-        // Timezone-safe date
         const dateObj = new Date(post.date + "T00:00:00");
         const formattedDate = dateObj.toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
-
-        // Calculate the page the post is on dynamically
-        const postIndex = posts.findIndex(p => p.file === post.file);
-        const postPage = Math.floor(postIndex / POSTS_PER_PAGE) + 1;
 
         const article = document.createElement('article');
         article.innerHTML = `
           <div class="post-featured">
-            <a href="posts/${post.file}?page=${postPage}">
+            <a href="posts/${post.file}">
               <img src="${post.image}" alt="${post.title}">
             </a>
           </div>
-          <h3><a href="posts/${post.file}?page=${postPage}">${post.title}</a></h3>
+          <h3><a href="posts/${post.file}">${post.title}</a></h3>
           <p><em>${formattedDate}</em></p>
-          <p>${post.excerpt} <a href="posts/${post.file}?page=${postPage}"><strong>Read more →</strong></a></p>
+          <p>${post.excerpt} <a href="posts/${post.file}"><strong>Read more →</strong></a></p>
         `;
         postList.appendChild(article);
       });
@@ -137,14 +121,13 @@
     }
 
     // ===========================
-    // 4. Pagination button events
+    // 3. Pagination button events
     // ===========================
     prevBtn.addEventListener('click', () => {
       if (currentPage > 1) {
         currentPage--;
         renderPage();
         window.scrollTo(0, 0);
-        updateURL();
       }
     });
 
@@ -154,17 +137,8 @@
         currentPage++;
         renderPage();
         window.scrollTo(0, 0);
-        updateURL();
       }
     });
-
-    // ===========================
-    // 5. Update URL without reloading page
-    // ===========================
-    function updateURL() {
-      const newURL = `${window.location.pathname}?page=${currentPage}`;
-      window.history.replaceState({}, '', newURL);
-    }
   </script>
 </body>
 </html>
