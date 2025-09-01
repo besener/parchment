@@ -73,27 +73,9 @@
 
   <!-- ===========================
        JavaScript Section
-       Dynamic back links + safe date display
+       Timezone-safe date display
        =========================== -->
   <script>
-    // ===========================
-    // 1. Get page number from URL or body dataset
-    // ===========================
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('page') || document.body.dataset.page || 1;
-
-    // ===========================
-    // 2. Update all back links dynamically
-    // ===========================
-    const backLinks = document.querySelectorAll('#back-link, #back-link-bottom');
-    backLinks.forEach(link => {
-      link.href = `../index.html?page=${page}`;
-      link.textContent = `← Back to Page ${page}`;
-    });
-
-    // ===========================
-    // 3. Timezone-safe date display
-    // ===========================
     const postDateEl = document.getElementById('post-date');
     if(postDateEl){
       const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
