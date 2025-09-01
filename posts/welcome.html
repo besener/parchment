@@ -74,22 +74,42 @@
        Dynamic back links + safe date display
        =========================== -->
   <script>
-    // ===========================
-    // 1. Get page number from URL or body dataset
-    // ===========================
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('page') || document.body.dataset.page || 1;
+    (function () {
+      const POSTS_PER_PAGE = 5; // must match index.html
+      const fileName = location.pathname.split("/").pop(); // e.g., "welcome.html"
 
-    // ===========================
-    // 2. Update all back links dynamically
-    // ===========================
-    const backLinks = document.querySelectorAll('#back-link, #back-link-bottom');
-    backLinks.forEach(link => {
-      link.href = `../index.html?page=${page}`;
-      link.textContent = `← Back to Page ${page}`;
-    });
+      // ===========================
+      // 1. Always compute page number from posts.json
+      // ===========================
+      fetch("../posts.json?v=" + Date.now(), { cache: "no-store" })
+        .then(res => res.json())
+        .then(posts => {
+          // Sort newest-first exactly like index.html
+          posts.sort((a, b) => new Date(b.date + "T00:00:00") - new Date(a.date + "T00:00:00"));
 
-    // ===========================
+          // Find the index of this post
+          const idx = posts.findIndex(p => (p.file || "").split("/").pop() === fileName);
+
+          // Compute page (fallback to 1)
+          const page = idx >= 0 ? Math.floor(idx / POSTS_PER_PAGE) + 1 : 1;
+
+          // ===========================
+          // 2. Update all back links dynamically
+          // ===========================
+          document.querySelectorAll("#back-link, #back-link-bottom").forEach(link => {
+            link.href = `../index.html?page=${page}`;
+            link.textContent = `← Back to Page ${page}`;
+          });
+        })
+        .catch(() => {
+          // fallback if posts.json fails
+          document.querySelectorAll("#back-link, #back-link-bottom").forEach(link => {
+            link.href = "../index.html?page=1";
+            link.textContent = "← Back to Page 1";
+          });
+        });
+
+      // ===========================
     // 3. Timezone-safe date display
     // ===========================
     const postDateEl = document.getElementById('post-date');
