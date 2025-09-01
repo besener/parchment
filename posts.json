@@ -7,18 +7,18 @@
     "image": "posts/images/welcome.jpg"
   },
   {
-    "title": "Welcome to My Parchment",
-    "date": "2025-08-20",
-    "file": "welcome.html",
-    "excerpt": "This is my very first post on Parchment! Here I’ll share thoughts, travels, and...",
-    "image": "posts/images/welcome.jpg"
+    "title": "Post 2",
+    "date": "2025-08-21",
+    "file": "post2.html",
+    "excerpt": "This is my post 2...",
+    "image": "posts/images/post2.jpg"
   },
   {
-    "title": "Welcome to My Parchment",
-    "date": "2025-08-20",
-    "file": "welcome.html",
-    "excerpt": "This is my very first post on Parchment! Here I’ll share thoughts, travels, and...",
-    "image": "posts/images/welcome.jpg"
+    "title": "Post 3",
+    "date": "2025-08-21",
+    "file": "post3.html",
+    "excerpt": "This is my post 3...",
+    "image": "posts/images/post3.jpg"
   },
   {
     "title": "Summer Baking",
