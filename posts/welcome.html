@@ -79,22 +79,22 @@
       const fileName = location.pathname.split("/").pop(); // e.g., "welcome.html"
 
       // ===========================
-      // 1. Always compute page number from posts.json
+      // 1. Compute page number dynamically from posts.json
       // ===========================
       fetch("../posts.json?v=" + Date.now(), { cache: "no-store" })
         .then(res => res.json())
         .then(posts => {
-          // Sort newest-first exactly like index.html
+          // Sort newest-first like index.html
           posts.sort((a, b) => new Date(b.date + "T00:00:00") - new Date(a.date + "T00:00:00"));
 
           // Find the index of this post
           const idx = posts.findIndex(p => (p.file || "").split("/").pop() === fileName);
 
-          // Compute page (fallback to 1)
+          // Compute page (fallback to 1 if not found)
           const page = idx >= 0 ? Math.floor(idx / POSTS_PER_PAGE) + 1 : 1;
 
           // ===========================
-          // 2. Update all back links dynamically
+          // 2. Update back links dynamically
           // ===========================
           document.querySelectorAll("#back-link, #back-link-bottom").forEach(link => {
             link.href = `../index.html?page=${page}`;
