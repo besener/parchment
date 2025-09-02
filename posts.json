@@ -21,6 +21,13 @@
     "image": "posts/images/kmg.jpg"
    },
    {
+    "title": "HTML Guide 101: How to Create Your Blog",
+    "date": "2025-08-25",
+    "file": "guide.html",
+    "excerpt": "I'm a self-taught HTML coder, and I really enjoy using GitHub...",
+    "image": "posts/images/guide.jpg"
+   },
+   {
     "title": "Course Design Institute",
     "date": "2025-08-29",
     "file": "cdi.html",
