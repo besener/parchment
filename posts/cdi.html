@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Design Institute - Parchment</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body data-page="{{PAGE}}">
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+    <nav>
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/cdi.jpg" alt="Course Design Institute">
+    </div>
+
+    <!-- Article content -->
+    <article>
+      <h2>Course Design Institute</h2>
+      <p id="post-date"><em>August 29, 2025</em></p>
+
+  <h4></h4>
+  <p>
+    I attended this year’s <a href="https://www.northwestern.edu/searle/" target="_blank"><strong>Course Design Institute (CDI)</strong></a> at the <em>Searle Center for Advancing Learning and Teaching</em>. For three days, educators collaborated to redesign syllabi for the upcoming academic year. The CDI focused on inclusive, evidence-based practices, active discussions, and a sense of community built on reflection. During the institute, I sketched out plans for my upcoming <a href="https://arthistory.northwestern.edu/courses/2025-2026/class-schedules/spring-2026-class-schedule/" target="_blank"><strong>graduate seminar</strong></a> and revisited my undergraduate teaching portfolio with fresh eyes.
+  </p>
+   
+  <h4>Day 1:</h4>
+  <p>
+    On the first day, we focused on integrated course design, learning outcomes, and authentic assessments. All participants received a CDI workbook with resources, tools, and exercises to document our step-by-step approach for new syllabi. Along with learning about course design frameworks, learning outcomes, authentic assessments, and activities, we formed small working groups to reflect, exchange ideas, and provide feedback. In the afternoon, we chose two breakout sessions to learn about designing collaborative projects, ePortfolios, and capstone projects.
+  </p>
+  
+  <p>
+    One key takeaway was learning about designing backward (<a href="https://andymatuschak.org/files/papers/Wiggins,%20McTighe%20-%202005%20-%20Understanding%20by%20design.pdf" target="_blank"><strong>Wiggins & McTighe, 1999</strong></a>). Like most of my colleagues, I usually design assignments and activities first, then develop assessments and provide feedback. Based on these, I set the course goals. By switching this order, or using “design backward and delivery forward,” we practiced setting learning goals and course descriptions first, before moving on to how we would check progress, give feedback, and plan activities.
+  </p>
+  
+  <h4>Day 2:</h4>
+  <p>
+    CDI’s second day focused on course mapping and equitable grading approaches. To create a course map, we first brainstormed how feedback shapes our students’ learning journeys. Then, we mapped authentic assessments, supporting activities, feedback, and content as we explored the Universal Design for Learning chart, which covers engagement, representation, and expression. We discussed differences between formative and summative feedback, as well as equitable grading methods, categories, and rationale. In the afternoon, we selected one breakout session to learn about scaling grading, alternative grading methods, and rubrics.
+  </p>
+ 
+  <p>
+    A key takeaway was learning about the Zone of Proximal Development (ZPD) (<a href="https://www.jstor.org/stable/j.ctvjf9vz4" target="_blank"><strong>Vygotsky, 1978</strong></a>), which means what a learner cannot yet do, what they can do with support, and what they can do independently. This understanding helps me design learning experiences using scaffolding. The ZPD guides me to create courses that are challenging enough to help students grow but not so difficult that they become overwhelming. I have already applied this in my undergraduate teaching portfolio, but today I learned its pedagogical terminology and psychological explanation.
+  </p>
+  
+  <h4>Day 3:</h4>
+  <p>
+   The final day shifted to a virtual setting, where we gathered on Zoom with Searle experts and instructional designers from IT Teaching and Learning Technologies. Together, we explored how to craft Canvas course pages that are welcoming, accessible, and easy to navigate for students. Delving into Canvas menus, templates, and assignments inspired us to reimagine our digital classrooms and elevate our online teaching strategies.
+  </p>
+  
+  <p>
+    Throughout the three days at CDI, I collaborated in lively feedback groups, discovered a treasure trove of resources, and engaged in hands-on sessions with experts from Searle and IT Teaching and Learning Technologies. My fellow participants brought perspectives from fields such as English, history, engineering, musicology, theater, data science, and medicine. Our conversations flowed beyond the sessions, continuing over lunch as we built new connections. Ultimately, CDI was an inspiring experience that prompted me to rethink my teaching goals and strategies and better support my students.
+  </p>
+</article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+        <a href="https://bsky.app/profile/besener.bsky.social" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-bluesky"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Timezone-safe date display
+       =========================== -->
+  <script>
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
