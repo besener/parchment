@@ -218,63 +218,44 @@ article p {
 
 /* ==============================
    Article Content Styling
-============================== */
+   Guide-Specific Styles
+   ============================== */
 
-/* Headings inside articles */
-article h3 {
-  font-size: 1.25rem;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  border-left: 4px solid #444;
-  padding-left: 0.5em;
-  font-weight: 600;
-}
-
-/* Table styling */
+/* Tables inside articles */
 article table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1em 0;
-  font-size: 0.95rem;
+  margin: 1rem 0;
+  font-size: 0.95rem;               /* Slightly smaller, matches body */
 }
 
 article table th,
 article table td {
-  border: 1px solid #ccc;
-  padding: 0.6em;
+  border: 1px solid #ddd;           /* Subtle borders */
+  padding: 0.5rem 0.75rem;
   text-align: left;
+  vertical-align: top;
 }
 
 article table th {
-  background-color: #f4f4f4;
-  font-weight: 600;
+  background: #f4f2ec;              /* Light parchment tone */
+  font-weight: bold;
 }
 
 /* Code blocks */
 article pre {
-  background-color: #1e1e1e;
-  color: #f5f5f5;
-  padding: 1em;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-family: "Fira Code", monospace, monospace;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 1em 0;
-}
-
-/* Inline code */
-article code {
-  background-color: #f0f0f0;
-  color: #d63384;
-  padding: 0.1em 0.3em;
+  background: #f8f7f2;              /* Soft background */
+  border: 1px solid #e0dfd9;
   border-radius: 4px;
-  font-family: "Fira Code", monospace, monospace;
-  font-size: 0.9rem;
+  padding: 0.75rem;
+  overflow-x: auto;                 /* Scroll horizontally if needed */
+  margin: 1rem 0;
 }
 
-
-.back-link:hover {
-  color: #5f6db3;               /* Hover color matches other interactive links */
-  text-decoration: underline;   /* Underline appears on hover */
+article code {
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.9rem;
+  background: #f4f3ef;
+  padding: 0.1rem 0.25rem;
+  border-radius: 3px;
 }
