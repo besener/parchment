@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searle Fellows Program (Fall Retreat) - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Z2ZPPD9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9Z2ZPPD9H');
+</script>
+</head>
+<body data-page="{{PAGE}}">
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+    <nav>
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/sfpfall" alt="Searle Fellows Program (Fall Retreat)">
+    </div>
+
+    <!-- Article content -->
+    <article>
+      <h2>{{TITLE}}</h2>
+      <p id="post-date"><em>September 6, 2025</em></p>
+      
+      <h4></h4>
+      <p>This past summer, I was honored to be selected for the 2025–26 <strong><a href='https://searle.northwestern.edu/programs-services/programs/program-pages/searle-fellows-program.html'>Searle Fellows Program</a></strong> (SFP) by Northwestern’s Office of the Provost and the Searle Center for Advancing Learning and Teaching. Since 1999, the SFP has brought together early career research and teaching faculty to foster a collaborative learning and teaching community. Fellows participate in a year-long program focused on innovative and transformative learning and teaching practices. This year marks the program’s 27th anniversary.</p>
+      
+      <h4></h4>
+      <p>Last Friday, I attended the Searle Fellows Program’s Fall Retreat, which marked the official start of the 2025–26 cohort. The retreat included a full day of activities to introduce participants to the program’s annual events, begin planning for the Fellows Project, start ePortfolio development, and meet our mentors.</p>
+      
+      <h4></h4>
+      <p>Meeting our mentors was a highlight, and I was pleased to learn that my mentor had completed the SFP the previous year. I believe that my mentor’s familiarity with the program’s content and expectations will be so valuable to our work together.</p>
+      
+      <h4></h4>
+      <p>As part of the SFP’s ePortfolio work, I will revise my teaching statement and develop a Fellows Project to showcase in my ePortfolio for the tenure-line path. I wrote my first teaching statement four years ago and have not significantly revised it since, so this process offers an opportunity for critical reflection. I now have the chance to review it with fresh eyes. During the morning session, my mentor and I chatted about my teaching statement, and I received constructive feedback. Peer reviews consistently prompt me to evaluate my writing from new perspectives.</p>
+      
+      <h4></h4>
+      <p>During the Fall Retreat, Searle gifted us with the second edition of <strong><a href='https://www.stephenbrookfield.com/'>Stephen D. Brookfield</a></strong>’s book, “<strong><a href='https://searle.northwestern.edu/resources/our-library/what_were_reading/brookfield_critically_reflective_teacher.html'>Becoming a Critically Reflective Teacher</a></strong>.” According to Brookfield, critically reflective teaching requires identifying and examining the assumptions that shape teaching and learning practices, a process facilitated by considering different perspectives from students, colleagues, established theories, and personal experience. I am excited to add this book to my pedagogy library and look forward to exploring it further. I plan to write a separate blog post focusing on this book.</p>
+
+      <h4></h4>
+      <p>In the afternoon, our small working groups gathered for the first time. Alongside the year’s retreats and teaching salons, these groups will become a regular space for us to share our journeys, exchange strategies, and discuss our projects and ePortfolios each quarter.</p>
+
+      <h4></h4>
+      <p>I am excited to embark on this year’s SFP journey. Ideas for my ePortfolio and Fellows Project are already taking shape, and I look forward to building my teaching portfolio webpage on GitHub and weaving it into my academic page. I plan to chronicle each SFP event with brief reflections along the way.</p>
+    </article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Timezone-safe date display
+       =========================== -->
+  <script>
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
