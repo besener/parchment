@@ -40,5 +40,19 @@
     "file": "sfpfallretreat.html",
     "excerpt": "This past summer, I was honored to be selected for...",
     "image": "posts/images/sfpfallretreat.jpg"  
+   },
+  {
+    "title": "Holiday Cookies",
+    "date": "2025-12-03",
+    "file": "holidaycookies.html",
+    "excerpt": "The holiday baking season is here, and I decided to...",
+    "image": "posts/images/holidaycookies.jpg"  
+  },
+  {
+    "title": "Searle Fellows Program (Winter Retreat)",
+    "date": "2025-12-17",
+    "file": "sfpwinterretreat.html",
+    "excerpt": "As the Fall quarter ended, we gathered for a full day of...",
+    "image": "posts/images/sfpwinterretreat.jpg"  
   }
 ]
