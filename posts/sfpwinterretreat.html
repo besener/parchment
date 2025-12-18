@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Searle Fellows Program (Fall Retreat) - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Z2ZPPD9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9Z2ZPPD9H');
+</script>
+</head>
+<body data-page="{{PAGE}}">
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+    <nav>
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/sfpwinterretreat.jpg" alt="Searle Fellows Program (Winter Retreat)">
+    </div>
+
+    <!-- Article content -->
+    <article>
+     <article>
+  <h2>Searle Fellows Program (Winter Retreat)</h2>
+  <p id="post-date"><em>December 17, 2025</em></p>
+  
+  <h4></h4>
+  <p>As the Fall quarter ended, we gathered for a full day of meetings at the 2025–26 Searle Fellows Program winter retreat. Northwestern’s Office of the Provost and the Searle Center for Advancing Learning and Teaching have brought together early-career research and teaching faculty since 1999 to foster a collaborative community focused on growth in learning and teaching. Searle Fellows participate in a year-long program featuring dynamic meetings, pedagogical resources, discussions, and activities centered on innovative learning and teaching practices.</p>
+  
+  <h4></h4>
+  <p>In the morning session, Searle Center’s assistant director of reflective pedagogy, Kate Flom Derrick, introduced us to Priya Parker’s book “The Art of Gathering: How We Meet and Why It Matters.” We used it to discuss our definition of “ritual” and what our classroom “ritual” is when teachers and students gather for a shared goal. For example, I start my classes by asking students how they are feeling on a scale of medieval animals or figures, such as rabbits, snails, turtles, lions, and eagles. I use Middle Ages memes created by Professor <strong><a href='https://www.ohiodominican.edu/about/campus-news/2025/odu_professor_runs_viral_meme_page.html'>Matthew Ponesse</a></strong> of Ohio Dominican University. My students look forward to the first slide of each class session. I also end my classes by asking if they have questions and reminding them to reach out during my student hours, drink water and milk, and get enough sleep. With these small “rituals” in my classroom, I hope to build a community, foster belonging and trust, reduce stress and anxiety, develop empathy, and facilitate learning.</p>
+  
+  <h4></h4>
+  <p>In the afternoon session, we delved into the third edition of <strong><a href='https://www.wiley.com/en-us/Classroom+Assessment+Techniques%3A+Formative+Feedback+Tools+for+College+and+University+Teachers%2C+3rd+Edition-p-9781119860174'>Classroom Assessment Techniques</a></strong> by Thomas A. Angelo (with Todd D. Zakrajsek). The revised edition includes fifty “Classroom Assessment Techniques” (CATs) based on formative assessment tools, along with case studies, examples, and caveats from different disciplines. The book shows how teachers used these techniques in their classrooms. This edition also features a new “Course Learning Outcomes Inventory” (CLOI), which teachers can use as a self-assessment tool to identify the most relevant learning outcomes for each course. We used this inventory to assess one of the courses we taught in the Fall quarter. Later, we partnered with other fellows who chose the same relevant technique to explore. We chose “42. Study Strategies Assessment” to apply to our humanities classes of art history and classics. We prepared four steps for using this technique: a core assessment (quiz, exam, or written paper), a study strategies survey, student reflection, and teacher feedback.</p>
+  
+  <h4></h4>
+  <p>During the year, each SFP fellow works on a proposed project to include in their e-portfolio. For my project, I will revise my first-year writing seminar syllabus and learning activities to teach first-year students how to write an academic paper in college. I taught a first-year writing seminar for the first time last winter quarter. To teach my students the elements of academic writing, I developed classroom learning activities that covered preparing an outline, working with a bibliography, finding academic sources, citation styles, paraphrasing, thesis statements, developing arguments and voice, academic tone, transitions, body paragraphs, introductions, and more.</p>
+  
+  <h4></h4>
+  <p>Our e-portfolio includes a revised teaching statement, curriculum vitae, as well as syllabi, sources, publications, and research. Beyond the SFP, the goal is to continue developing our e-portfolios over the years. I am currently building my e-portfolio site on GitHub and will integrate it into my academic website. I am excited to attend the next SFP meeting in January.</p>
+
+  <h4></h4>
+  <p></p>
+    </article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Timezone-safe date display
+       =========================== -->
+  <script>
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
