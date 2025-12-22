@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Reimaginings of Middle Eastern Studies I - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Z2ZPPD9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9Z2ZPPD9H');
+</script>
+</head>
+<body data-page="{{PAGE}}">
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+    <nav>
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/digitalreimaginings.jpg" alt="Digital Reimaginings of Middle Eastern Studies I">
+    </div>
+
+    <!-- Article content -->
+    <article>
+      <h2>Digital Reimaginings of Middle Eastern Studies I: Crafting Virtual Worlds Brick by Brick</h2>
+      <p id="post-date"><em>November 23, 2025</em></p>
+      
+      <h4></h4>
+      <p>Video games are not only for entertainment or achieving in-game objectives; they can also provide meaningful learning experiences. They can enhance teaching by providing students with interactive and engaging learning experiences. However, there is also a risk of conveying negative messages and spreading misunderstanding, misconceptions, and stereotypes. When integrated thoughtfully, they can offer students an immersive platform for analyzing patterns, interpreting cultural narratives, acquiring knowledge, gaining insights, and deepening their understanding of key topics and themes.</p>
+      
+      <h4></h4>
+      <p>This morning, I presented “<strong><a href='https://www.academia.edu/145257843/_Classroom_in_the_Ludic_Age_Teaching_Islamic_Art_with_Video_Games_in_Digital_Reimaginings_of_Middle_Eastern_Studies_I_Crafting_Virtual_Worlds_Brick_by_Brick'>Classroom in the Ludic Age: Teaching Islamic Art with Video Games</a></strong>” at the <strong><a href='https://mesana.org/pdf/MESA2025_preview.pdf'>2025 Middle East Studies Association annual meeting</a></strong> in Washington, DC. The session, “Digital Reimagining of Middle Eastern Studies I: Crafting Virtual Worlds Brick by Brick,” was organized and chaired by Professor Ali Alibhai of the University of Texas.</p>
+      
+      <h4></h4>
+      <p>In my paper, I presented two cases from an undergraduate seminar, “<strong><a href='https://courses.lsa.umich.edu/medievalisminvideogames/'>Medievalism in Video Games: Art, Culture, and Theory</a></strong>,” which I designed and taught in Fall 2023 in the Department of the History of Art at the University of Michigan. In this course, my students engaged with video game narratives and representations alongside theoretical and art historical readings, and participated in game-based assessments, visual analysis, and critical writing to study Islamic art and visual culture through video games. The first case examines real-life medieval monuments and their representations in the three-dimensional environments of historical video games. The second case explores a historical simulation on a text-based, two-dimensional platform that proved effective in transforming students’ learning experiences and decision-making. I shared my course outcomes, including student feedback and insights based on two of the games played, Assassin’s Creed: Mirage and The Hajj Trail.</p>
+
+      <h4></h4>
+      <p></p>
+
+      <h4></h4>
+      <p></p>
+    </article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html">About Me</a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2025 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Timezone-safe date display
+       =========================== -->
+  <script>
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
