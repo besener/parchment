@@ -61,5 +61,12 @@
     "file": "sfpwinterretreat.html",
     "excerpt": "As the Fall quarter ended, we gathered for a full day of...",
     "image": "posts/images/sfpwinterretreat.jpg"  
+  },
+  {
+    "title": "Orange Sky",
+    "date": "2025-12-24",
+    "file": "orangesky.html",
+    "excerpt": "At dawn, the sky turned a beautiful, vibrant orange...",
+    "image": "posts/images/orangesky.jpg"  
   }
 ]
