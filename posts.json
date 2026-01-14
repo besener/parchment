@@ -68,5 +68,12 @@
     "file": "orangesky.html",
     "excerpt": "At dawn, the sky turned a beautiful, vibrant orange...",
     "image": "posts/images/orangesky.jpg"  
+  },
+  {
+    "title": "",
+    "date": "2026-01-12",
+    "file": "aha26.html",
+    "excerpt": "Last Friday, I attended the 139th annual meeting of...",
+    "image": "posts/images/aha26.jpg"  
   }
 ]
