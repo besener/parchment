@@ -84,6 +84,13 @@
     "image": "posts/images/booklaunch.jpg"  
   },
   {
+    "title": "Purple Hyacinth",
+    "date": "2026-04-13",
+    "file": "purplehyacinth.html",
+    "excerpt": "Once again, the second week of April arrives, bringing a burst of blooming...",
+    "image": "posts/images/purplehyacinth.jpg"  
+  },
+  {
     "title": "Searle Fellows Program (Spring Retreat)",
     "date": "2026-04-26",
     "file": "sfpspringretreat.html",
