@@ -96,5 +96,12 @@
     "file": "sfpspringretreat.html",
     "excerpt": "At the end of the fourth week of the spring quarter,...",
     "image": "posts/images/sfpspringretreat.jpg"  
+  },
+  {
+    "title": "Central Park",
+    "date": "2026-05-12",
+    "file": "centralpark.html",
+    "excerpt": "Over the weekend, I took a lovely walk in Central Park...",
+    "image": "posts/images/centralpark.jpg"  
   }
 ]
