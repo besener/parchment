@@ -157,6 +157,15 @@ article p {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+/* Full-width image */
+.image-full img {
+  width: 100%;
+  height: auto;                            /* Maintain aspect ratio */
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
 /* ==============================
    Pagination Styles
