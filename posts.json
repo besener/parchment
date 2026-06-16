@@ -110,5 +110,12 @@
     "file": "sfpceremony.html",
     "excerpt": "As the academic year draws to a close, we gathered with our mentors...",
     "image": "posts/images/sfpceremony.jpg"  
+  },
+  {
+    "title": "Spring Seminar",
+    "date": "2026-06-09",
+    "file": "spg26gradseminar.html",
+    "excerpt": "Wrapping up our quarter-long spring graduate seminar...",
+    "image": "posts/images/spg26gseminar.jpg"  
   }
 ]
