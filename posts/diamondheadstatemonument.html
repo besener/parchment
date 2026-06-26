@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Head State Monument - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Z2ZPPD9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9Z2ZPPD9H');
+</script>
+</head>
+<body data-page="{{PAGE}}">
+  
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+    <nav>
+      <a href="https://besener.github.io/parchment/"><strong>Home</strong></a>
+    </nav>  
+    <nav> 
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/diamondheadstatemonument.jpg" alt="Diamond Head State Monument">
+    </div>
+
+    <!-- Article content -->
+    <article>
+       <h2>Diamond Head State Monument</h2>
+  <p id="post-date"><em>July 28, 2026</em></p>
+  
+  <h4></h4>
+  <p></p>
+
+  <h4></h4>
+  <p>Hawaii has always been high on my bucket list, so finally arriving on this volcanic island felt like a dream. If you want a stunning view of Waikīkī and the Pacific Ocean from Oahu’s southern edge, Diamond Head State Monument is a must-see in Honolulu. The crater is huge and was shaped by lava from an old volcanic eruption. Scientists assure us it is no longer active.</p>
+
+  <h4></h4>
+  <p>The trail opens to hikers at 6:00 am, but if you get there a bit earlier, around 5:40 am, you’ll catch a sunrise filled with orange and pink—great for photos. The hike is about 2.5 km from the entrance, with a climb of around 170 meters. It took me about 55 minutes to reach the top, with two stops for photos at the lookouts, and about 30 minutes to come back down. There’s a shortcut from the summit through a tunnel and down some steep stairs. The path is well-kept but can be steep, and the stairs are tough on your legs and knees. If you’re new to steep hikes, be ready for a challenge, but it’s worth it. I’d call the trail moderately difficult, so it might not be the best for beginners. . I recommend bringing a liter of water, a granola bar, a banana, and some trail mix. Make sure to wear comfortable trail boots, a hat, sunglasses, and sunscreen. It might be useful to have a wrist strap if you plan to carry your phone to take photos on the trail.</p>
+
+  <h4></h4>
+  <p>Getting to the top was truly rewarding. The observation platform gives you a view over Waikīkī beach, and watching the Pacific Ocean waves roll in is really calming. The view is amazing, and the hike itself is something you won’t forget. From up there, Waikīkī looks tiny, surrounded by the vast ocean on one side and volcanic ridges on the other. People visit Diamond Head as a must-do attraction, but just checking it off your list does not capture what makes this crater special. Diamond Head sticks with you because it shows how rewarding it is to slow down, take in your surroundings, watch the nature, mountains, ecology, feel the wind on your face, and enjoy each step of the trail.</p>
+
+  <h4></h4>
+    <div class="post-featured-post">
+      <img src="images/diamondheadstatemonument-2.jpg" alt="Diamond Head State Monument">
+    </div>
+  <p></p>
+
+  <h4></h4>
+  <p></p>
+  
+  <h4></h4>
+  <p></p>
+    </article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html"><strong>About Me</strong></a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2026 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Timezone-safe date display
+       =========================== -->
+  <script>
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
