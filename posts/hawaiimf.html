@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mānoa Falls: A Tropical Rainforest - Parchment</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9Z2ZPPD9H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H9Z2ZPPD9H');
+</script>
+</head>
+<body data-page="{{PAGE}}">
+  
+  <!-- ===========================
+       Header Section
+       =========================== -->
+  <header>
+    <h1>Parchment</h1>
+    <p>My blog about life in/outside academia</p>
+    <nav>
+      <a href="https://besener.github.io/parchment/"><strong>Home</strong></a>
+    </nav>  
+    <nav> 
+      <!-- Back link dynamically updated via JS -->
+      <a id="back-link" class="back-link" href="../index.html">← Back to Page</a>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main Post Content
+       =========================== -->
+  <main>
+    <!-- Featured image for the post -->
+    <div class="post-featured-post">
+      <img src="images/dhsm.jpg" alt="Mānoa Falls">
+    </div>
+
+    <!-- Article content -->
+    <article>
+       <h2>Mānoa Falls: A Tropical Rainforest</h2>
+  <p id="post-date"><em>July 28, 2026</em></p>
+  
+  <h4></h4>
+  <p></p>
+
+  <h4></h4>
+  <p>I had a great time hiking to the Mānoa Valley. If you are looking to explore more of Honolulu beyond the sandy shores, I suggest hiking to Mānoa Falls. While some people call it an easy hike, I don’t completely agree. I think it can be a bit tough, especially if you have a heart condition or problems with your knees, legs, joints, or back. For first-time hikers, this trail might feel a bit challenging, but it’s definitely doable. These challenges aren’t too difficult, but you do need to watch your step as you climb about 500 feet (152 meters) up.</p>
+
+  <h4></h4>
+  <p>The trail isn’t long (about 1.7 miles or 2.7 km round-trip), but it is steep, with steps and tree roots along the way. After it rains, which happens a lot in this rainforest, the rocks can get slippery and muddy. My main tip for beginners is that your shoes matter more than your fitness level. I’ve seen people try to hike in flip-flops, but it’s much safer to wear shoes with good grip. You don’t need top-of-the-line fancy hiking boots—just comfortable trail shoes or sneakers with sturdy soles work well. Your shoes will probably get muddy, but that’s part of the fun. Bring at least a liter of water. Also, it is good to use bug spray to protect yourself from mosquitoes and other insects. If you skip it, you’ll get bitten fast. I brought a small backpack with a collapsible water bottle, band-aids, trail mix, a hat, sunscreen, and granola bars. A rain poncho is also a good idea.</p>
+
+  <h4></h4>
+  <p>As I walked along the trail, I enjoyed the amazing views of Mānoa Valley. It is often called “Rainbow Valley” because rainbows appear there so often. The area is full of beautiful plants such as banyan trees, ginger, hibiscus, eucalyptus, bamboo, and hau trees. After about 35 to 45 minutes of hiking, depending on your pace, I reached the end of the trail at a viewing spot in front of Mānoa Falls. The waterfall drops about 150 feet (46 meters) from a cliff into a small pool below. It’s a great spot to take photos and enjoy the scenery before heading back down.</p>
+
+  <h4></h4>
+  <p></p>
+
+  <h4></h4>
+    <div class="post-featured-post">
+      <img src="images/mf-2.jpg" alt="Mānoa Falls Landscape">
+    </div>
+  <p></p>
+
+  <h4></h4>
+  <p></p>
+  
+  <h4></h4>
+  <p></p>
+    </article>
+
+    <!-- Duplicate back link at the bottom for convenience -->
+    <p><a id="back-link-bottom" class="back-link" href="../index.html">← Back to Page</a></p>
+  </main>
+
+  <!-- ===========================
+       Footer Section
+       =========================== -->
+  <footer>
+    <p>
+      <a href="../about.html"><strong>About Me</strong></a> |
+      <span class="social-icons">
+        <a href="https://github.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/bihter.esener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://flickr.com/besener" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </span>
+    </p>
+    <p>© 2026 Parchment</p>
+  </footer>
+
+  <!-- ===========================
+       JavaScript Section
+       Timezone-safe date display
+       =========================== -->
+  <script>
+    const postDateEl = document.getElementById('post-date');
+    if(postDateEl){
+      const isoDateStr = postDateEl.textContent.trim(); // e.g., "2025-08-20"
+
+      // Only process if the date looks valid
+      if (/^\d{4}-\d{2}-\d{2}$/.test(isoDateStr)) {
+        // Add T00:00:00 to force UTC parsing (prevents timezone shifts)
+        const dateObj = new Date(isoDateStr + "T00:00:00");
+
+        // Format nicely for display
+        postDateEl.textContent = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
